@@ -260,12 +260,13 @@ class Box(object):
           :type new_volume: int
         """
         self.volume = new_volume
-        if self.volume > len(self.contents):
+        array = ''
+        if self.volume >= len(self.contents):
             return ''
         elif self.volume < len(self.contents):
             for k in range(self.volume, len(self.contents)):
-
-
+                array += self.contents[k]
+            return array
         # ---------------------------------------------------------------------
         # TODO: 5. Implement and test this function.
         #     The testing code is already written for you (above).
@@ -322,6 +323,7 @@ class Box(object):
         Type hints:
           :type new_volume: int
         """
+
         # ---------------------------------------------------------------------
         # TODO: 6. Implement and test this function.
         #     The testing code is already written for you (above).
