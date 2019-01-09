@@ -217,6 +217,8 @@ def practice_problem2b(sequence):
     """
     newlist = ''
     for k in range(len(sequence)):
+        if len(sequence[k]) <= 0:
+            return ''
         word = sequence[k]
         newlist = newlist + word[0]
     return newlist
