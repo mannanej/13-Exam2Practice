@@ -100,6 +100,7 @@ class Box(object):
         self.volume = volume
         if len(contents) > volume:
             self.contents = ''
+            self.originalcontents = ''
         # ---------------------------------------------------------------------
         # DONE: 2. Implement and test this function.
         #     See the testing code (below) for more examples.
@@ -354,7 +355,7 @@ class Box(object):
         self.volume = self.originalvolume
         self.contents = self.originalcontents
         # ---------------------------------------------------------------------
-        # TODO: 7. Implement and test this function.
+        # DONE: 7. Implement and test this function.
         #     The testing code is already written for you (above).
         # ---------------------------------------------------------------------
         # ---------------------------------------------------------------------
@@ -381,6 +382,7 @@ class Box(object):
         Type hints:
           :type other_box: Box
         """
+
         # ---------------------------------------------------------------------
         # TODO: 8. Implement and test this function.
         #     The testing code is already written for you (above).
