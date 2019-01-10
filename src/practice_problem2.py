@@ -217,14 +217,13 @@ def practice_problem2b(sequence):
     """
     newlist = ''
     for k in range(len(sequence)):
-        if len(sequence[k]) <= 0:
-            return ''
-        word = sequence[k]
-        newlist = newlist + word[0]
+        if len(sequence[k]) != 0:
+            word = sequence[k]
+            newlist = newlist + word[0]
     return newlist
 
     ###########################################################################
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     ###########################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
