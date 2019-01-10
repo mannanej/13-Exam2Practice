@@ -101,6 +101,7 @@ class Box(object):
         if len(contents) > volume:
             self.contents = ''
             self.originalcontents = ''
+        self.newlist = []
         # ---------------------------------------------------------------------
         # DONE: 2. Implement and test this function.
         #     See the testing code (below) for more examples.
@@ -352,6 +353,7 @@ class Box(object):
           Changes this Box's contents and volume to whatever they were
           when this Box was constructed.
         """
+        self.newlist = self.newlist + [self.contents]
         self.volume = self.originalvolume
         self.contents = self.originalcontents
         # ---------------------------------------------------------------------
@@ -382,9 +384,10 @@ class Box(object):
         Type hints:
           :type other_box: Box
         """
+        other_box.contents = self.append_string(other_box.contents)
 
         # ---------------------------------------------------------------------
-        # TODO: 8. Implement and test this function.
+        # DONE: 8. Implement and test this function.
         #     The testing code is already written for you (above).
         # ---------------------------------------------------------------------
         # ---------------------------------------------------------------------
@@ -426,8 +429,10 @@ class Box(object):
           h = b.get_history()
           #   h is now ['GoodGo', 'GoodBye']
         """
+        return self.newlist
+
         # ---------------------------------------------------------------------
-        # TODO: 9. Implement and test this function.
+        # DONE: 9. Implement and test this function.
         #     The testing code is already written for you (above).
         # ---------------------------------------------------------------------
         # ---------------------------------------------------------------------
@@ -453,9 +458,11 @@ class Box(object):
         Type hints:
           :type other_box: Box
         """
-
+        newcontents = self.contents + other_box.contents
+        newvolume = self.volume + other_box.volume
+        return Box(newcontents, newvolume)
         # ---------------------------------------------------------------------
-        # TODO: 10. Implement and test this function.
+        # DONE: 10. Implement and test this function.
         #     The testing code is already written for you (above).
         # ---------------------------------------------------------------------
         # ---------------------------------------------------------------------
