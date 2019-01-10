@@ -172,15 +172,15 @@ def practice_problem3a(circles):
     Type hints:
       :type sequence: [rg.Circle]
     """
-    total = 0
-    if len(circles) < 1:
+    total = 1
+    if len(circles) == 0:
         return 1
     else:
         for k in range(len(circles)):
-            total = total * circles[0]
+            total = total * circles[k].center.x
     return total
     ###########################################################################
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     ###########################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -348,8 +348,13 @@ def practice_problem3b(sequence):
     Type hints:
       :type: sequence: list    or tuple or string
     """
+    x = len(sequence) - 1
+    for k in range(len(sequence) - 1):
+        if sequence[k] == sequence[x]:
+            return True
+    return False
     ###########################################################################
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     # IMPLEMENTATION REQUIREMENT:  You are NOT allowed to use the
@@ -476,8 +481,13 @@ def practice_problem3c(sequence):
     Type hints:
       :type: sequence: list    or tuple or string
     """
+    newlist = []
+    for k in range(len(sequence)):
+        if sequence[k] == 0:
+            newlist = newlist + [k]
+    return newlist
     ###########################################################################
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     ###########################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -599,8 +609,12 @@ def practice_problem3d(sequence):
     Type hints:
       :type: sequence: list    or tuple or string
     """
+    #for k in range(len(sequence)):
+        #if sequence[k] == 0:
+            #return k
+    #return -1
     ###########################################################################
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #     The testing code is already written for you (above).
     ###########################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -609,7 +623,7 @@ def practice_problem3d(sequence):
     ###########################################################################
 
     ###########################################################################
-    # TODO: 6. Just ABOVE this _TODO_, you should have implemented
+    # DONE: 6. Just ABOVE this _TODO_, you should have implemented
     #     a solution for the   practice_problem3d   function.
     #     Here, put ANOTHER solution, as follows:
     #
@@ -624,6 +638,10 @@ def practice_problem3d(sequence):
     #          This solution should *** HAVE NO LOOP (no FOR). ***
     ###########################################################################
 
+    x = practice_problem3c(sequence)
+    if x == []:
+        return -1
+    return x[0]
 
 def run_test_practice_problem3e():
     """ Tests the    practice_problem3e    function. """
@@ -750,8 +768,13 @@ def practice_problem3e(sequence):
     Type hints:
       :type sequence: list(float)    or tuple(float)
     """
+    total = 0
+    for k in range(len(sequence)):
+        if k % 2 == 0:
+            total = total + sequence[k]
+    return total
     # -------------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # DONE: 7. Implement and test this function.
     #     The testing code is already written for you (above).
     ###########################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
